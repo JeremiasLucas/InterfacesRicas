@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" #postForm="ngForm">
+    <div>
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" required [(ngModel)]="post.titulo" name="titulo" #titulo="ngModel">
+        <div *ngIf="titulo.invalid && titulo.touched">Título é obrigatório.</div>
+    </div>
+    <div>
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" required [(ngModel)]="post.descricao" name="descricao" #descricao="ngModel"></textarea>
+        <div *ngIf="descricao.invalid && descricao.touched">Descrição é obrigatória.</div>
+    </div>
+    <button type="submit" [disabled]="postForm.invalid">Cadastrar</button>
+</form>

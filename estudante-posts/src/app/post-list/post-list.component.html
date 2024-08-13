@@ -1,0 +1,7 @@
+<div *ngFor="let post of posts">
+    <h2>{{ post.titulo }}</h2> 
+    <p>{{ post.descricao }}</p>
+    <p>{{ formatDate(post.dataHora) }}</p>
+    <button (click)="deletePost(post.id)">Excluir</button>
+</div>
+<h2></h2>
